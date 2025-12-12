@@ -1,0 +1,44 @@
+# Бесплатная конфигурация AI-агента
+
+agent:
+  name: "FreeBrowserAgent"
+  version: "1.0"
+  
+models:
+  planner: "llama3.2"
+  navigator: "llama3.2-vision"
+  interactor: "llama3.2"
+  
+browser:
+  headless: false
+  viewport:
+    width: 1280
+    height: 720
+  slow_mo: 1000  # Замедление действий (мс)
+  timeout: 30000
+  
+screenshots:
+  enabled: true
+  format: "png"
+  quality: 85
+  
+logging:
+  level: "INFO"
+  file: "agent.log"
+  
+security:
+  require_confirmation: false  # В бесплатной версии для простоты
+  max_pages: 5
+  
+# Локальные модели через Ollama
+ollama:
+  host: "localhost"
+  port: 11434
+  default_model: "llama3.2"
+  vision_model: "llama3.2-vision"
+  
+# Пути для сохранения данных
+paths:
+  screenshots: "./screenshots"
+  logs: "./logs"
+  downloads: "./downloads"
